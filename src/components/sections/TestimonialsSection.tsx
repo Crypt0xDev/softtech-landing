@@ -135,7 +135,9 @@ const TestimonialsSection: React.FC = () => {
               <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-secondary-600 dark:text-secondary-400">{stat.label}</div>
+              <div className="text-sm text-secondary-600 dark:text-secondary-400">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>

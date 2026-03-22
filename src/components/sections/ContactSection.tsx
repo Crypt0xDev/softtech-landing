@@ -92,7 +92,10 @@ const ContactSection: React.FC = () => {
     });
 
   return (
-    <section id="contact" className="section-padding bg-secondary-50 dark:bg-secondary-900">
+    <section
+      id="contact"
+      className="section-padding bg-secondary-50 dark:bg-secondary-900"
+    >
       <Container size="md">
         <SectionTitle
           title="Cotiza tu Proyecto"
@@ -113,7 +116,10 @@ const ContactSection: React.FC = () => {
               className="text-center py-12"
             >
               <div className="mb-4 inline-flex p-4 bg-green-100 dark:bg-green-900/30 rounded-full">
-                <CheckCircle size={48} className="text-green-600 dark:text-green-400" />
+                <CheckCircle
+                  size={48}
+                  className="text-green-600 dark:text-green-400"
+                />
               </div>
               <h3 className="text-2xl font-bold text-secondary-900 dark:text-white mb-2">
                 ¡Mensaje Enviado!
