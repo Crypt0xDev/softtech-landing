@@ -5,6 +5,9 @@ import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import AboutSection from '@/components/sections/AboutSection';
 import LoadingSpinner from '@/components/shared/LoadingSpinner';
+import SocialFloat from '@/components/shared/SocialFloat';
+import WhatsAppButton from '@/components/shared/WhatsAppButton';
+import ThemeToggle from '@/components/shared/ThemeToggle';
 
 // Lazy load secciones no críticas (below the fold)
 const TestimonialsSection = lazy(
@@ -21,8 +24,18 @@ const ContactSection = lazy(
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-secondary-900 transition-colors duration-300">
       <Navbar />
+
+      {/* Botones flotantes de redes sociales */}
+      <SocialFloat />
+
+      {/* Botón flotante de WhatsApp */}
+      <WhatsAppButton />
+
+      {/* Botón flotante de Tema (visible en móviles también) */}
+      <ThemeToggle />
+
       <main>
         {/* Secciones críticas - Carga inmediata */}
         <HeroSection />

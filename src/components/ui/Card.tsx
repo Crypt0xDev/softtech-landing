@@ -8,7 +8,7 @@ const Card: React.FC<CardProps> = ({
   hover = true,
 }) => {
   const baseStyles =
-    'bg-white rounded-xl shadow-md p-6 border border-secondary-100';
+    'bg-white dark:bg-secondary-800 rounded-xl shadow-md p-6 border border-secondary-100 dark:border-secondary-700';
   const hoverStyles = hover
     ? 'transition-all duration-300 hover:shadow-xl hover:-translate-y-1'
     : '';

@@ -9,7 +9,6 @@ import {
   Server,
 } from 'lucide-react';
 import Container from '@/components/ui/Container';
-import Card from '@/components/ui/Card';
 import SectionTitle from '@/components/ui/SectionTitle';
 
 const ServicesSection: React.FC = () => {
@@ -67,8 +66,38 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-secondary-50">
-      <Container>
+    <section
+      id="services"
+      className="section-padding relative bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-secondary-900 dark:via-secondary-800 dark:to-secondary-900 overflow-hidden"
+    >
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <motion.div
+        className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-primary-400/20 to-secondary-400/20 dark:from-primary-600/10 dark:to-secondary-600/10 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [0, 90, 0],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-secondary-400/20 to-primary-400/20 dark:from-secondary-600/10 dark:to-primary-600/10 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          rotate: [0, -90, 0],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
+      />
+
+      <Container className="relative z-10">
         <SectionTitle
           title="Nuestros Servicios"
           subtitle="Soluciones digitales completas para potenciar tu empresa"
@@ -80,42 +109,74 @@ const ServicesSection: React.FC = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="group"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group h-full"
               >
-                <Card className="h-full hover:shadow-xl transition-shadow duration-300">
+                <motion.div
+                  className="h-full glass bg-white/70 dark:bg-secondary-800/70 backdrop-blur-md rounded-2xl p-6 border border-secondary-200/50 dark:border-secondary-700/50 shadow-smooth hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  {/* Gradient overlay on hover */}
                   <motion.div
-                    className="mb-4 p-3 bg-primary-100 w-fit rounded-lg group-hover:bg-primary-600 transition-all duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-secondary-500/5 dark:from-primary-600/10 dark:to-secondary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={false}
+                  />
+
+                  {/* Shine effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+                    initial={false}
+                  />
+
+                  {/* Icon Container */}
+                  <motion.div
+                    className="relative mb-5 p-4 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 w-fit rounded-xl group-hover:from-primary-600 group-hover:to-secondary-600 dark:group-hover:from-primary-600 dark:group-hover:to-secondary-600 transition-all duration-300 shadow-md"
+                    whileHover={{ scale: 1.15, rotate: [0, -5, 5, 0] }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                   >
                     <Icon
-                      size={32}
-                      className="text-primary-600 group-hover:text-white transition-colors duration-300"
+                      size={36}
+                      className="text-primary-600 dark:text-primary-400 group-hover:text-white transition-colors duration-300"
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-secondary-900 mb-3">
+
+                  {/* Content */}
+                  <h3 className="relative text-2xl font-bold text-secondary-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-secondary-600 mb-4">
+                  <p className="relative text-secondary-600 dark:text-secondary-300 mb-5 leading-relaxed">
                     {service.description}
                   </p>
-                  <ul className="space-y-2">
+
+                  {/* Features List */}
+                  <ul className="relative space-y-2.5">
                     {service.features.map((feature, idx) => (
-                      <li
+                      <motion.li
                         key={idx}
-                        className="text-sm text-secondary-700 flex items-center gap-2"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 + idx * 0.05 }}
+                        className="text-sm text-secondary-700 dark:text-secondary-400 flex items-center gap-3 group/item"
                       >
-                        <div className="w-1.5 h-1.5 bg-primary-600 rounded-full" />
-                        {feature}
-                      </li>
+                        <motion.div
+                          className="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full group-hover/item:scale-125 transition-transform duration-200"
+                          whileHover={{ scale: 1.5 }}
+                        />
+                        <span className="group-hover/item:text-secondary-900 dark:group-hover/item:text-white transition-colors duration-200">
+                          {feature}
+                        </span>
+                      </motion.li>
                     ))}
                   </ul>
-                </Card>
+                </motion.div>
               </motion.div>
             );
           })}

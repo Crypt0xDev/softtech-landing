@@ -44,7 +44,7 @@
 </tr>
 </table>
 
-## �️ Stack Tecnológico
+## ️ Stack Tecnológico
 
 <div align="center">
 
@@ -87,7 +87,7 @@ npm run dev
 | `npm run preview` | 👀 Preview del build de producción            |
 | `npm run lint`    | 🔍 Verificar código con ESLint                |
 
-## � Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 ```
 📁 src/
@@ -107,7 +107,7 @@ npm run dev
 
 ## ⚙️ Variables de Entorno
 
-> � **IMPORTANTE - SEGURIDAD**
+> **IMPORTANTE - SEGURIDAD**
 >
 > - Este repositorio es **PÚBLICO** - NUNCA subas datos reales al repositorio
 > - Los valores en el código son **SOLO EJEMPLOS**

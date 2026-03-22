@@ -23,8 +23,13 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-secondary-900 text-white">
-      <div className="container-custom py-12 md:py-16">
+    <footer className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-secondary-900 dark:from-secondary-950 dark:via-secondary-900 dark:to-secondary-950 text-white overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-600/10 rounded-full filter blur-3xl"></div>
+
+      <div className="container-custom py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <motion.div
@@ -107,38 +112,89 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3 flex-wrap">
               {socialIcons.map(({ Icon, href, label }, index) => (
                 <motion.a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-secondary-800 rounded-lg hover:bg-primary-600 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="relative group p-3 bg-gradient-to-br from-secondary-800 to-secondary-900 rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-300 overflow-hidden"
                   aria-label={label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.1,
+                    type: 'spring',
+                    stiffness: 200,
+                  }}
+                  whileHover={{
+                    scale: 1.15,
+                    y: -4,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.3 },
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Icon size={20} />
+                  {/* Efecto de brillo */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: '100%' }}
+                    transition={{ duration: 0.6 }}
+                  />
+
+                  {/* Icono */}
+                  <Icon size={22} className="relative z-10" />
+
+                  {/* Tooltip */}
+                  <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-secondary-900 text-white px-3 py-1 rounded-lg text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                    {label}
+                  </span>
                 </motion.a>
               ))}
             </div>
-            <p className="text-secondary-400 mt-4 text-sm">
+            <p className="text-secondary-400 mt-6 text-sm leading-relaxed">
               {COMPANY_INFO.coverage}
             </p>
           </motion.div>
         </div>
 
-        <div className="border-t border-secondary-800 mt-8 pt-8 text-center text-secondary-400 text-sm">
-          <p>
-            &copy; {currentYear} {COMPANY_INFO.name}. Todos los derechos
-            reservados.
-          </p>
-        </div>
+        {/* Copyright Section */}
+        <motion.div
+          className="relative border-t border-secondary-800 dark:border-secondary-700 mt-12 pt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-secondary-400 dark:text-secondary-500 text-sm">
+              &copy; {currentYear}{' '}
+              <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
+                {COMPANY_INFO.name}
+              </span>
+              . Todos los derechos reservados.
+            </p>
+            <div className="flex items-center gap-4 text-xs text-secondary-500 dark:text-secondary-600">
+              <a
+                href="#"
+                className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+              >
+                Política de Privacidad
+              </a>
+              <span className="w-1 h-1 rounded-full bg-secondary-600 dark:bg-secondary-700"></span>
+              <a
+                href="#"
+                className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+              >
+                Términos de Uso
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

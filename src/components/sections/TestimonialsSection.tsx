@@ -65,7 +65,7 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-secondary-900">
       <Container>
         <SectionTitle
           title="Lo Que Dicen Nuestros Clientes"
@@ -83,7 +83,7 @@ const TestimonialsSection: React.FC = () => {
             >
               <Card className="h-full relative">
                 {/* Quote Icon */}
-                <div className="absolute top-4 right-4 text-primary-200">
+                <div className="absolute top-4 right-4 text-primary-200 dark:text-primary-900/30">
                   <Quote size={48} />
                 </div>
 
@@ -91,23 +91,23 @@ const TestimonialsSection: React.FC = () => {
                 <div className="mb-4">{renderStars(testimonial.rating)}</div>
 
                 {/* Content */}
-                <p className="text-secondary-700 mb-6 italic">
+                <p className="text-secondary-700 dark:text-secondary-300 mb-6 italic">
                   "{testimonial.content}"
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-secondary-900">
+                    <p className="font-semibold text-secondary-900 dark:text-white">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-secondary-600">
+                    <p className="text-sm text-secondary-600 dark:text-secondary-400">
                       {testimonial.role}
                     </p>
-                    <p className="text-sm text-primary-600 font-medium">
+                    <p className="text-sm text-primary-600 dark:text-primary-400 font-medium">
                       {testimonial.company}
                     </p>
                   </div>
@@ -132,10 +132,10 @@ const TestimonialsSection: React.FC = () => {
             { value: '5★', label: 'Calificación Promedio' },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-secondary-600">{stat.label}</div>
+              <div className="text-sm text-secondary-600 dark:text-secondary-400">{stat.label}</div>
             </div>
           ))}
         </motion.div>

@@ -92,7 +92,7 @@ const ContactSection: React.FC = () => {
     });
 
   return (
-    <section id="contact" className="section-padding bg-secondary-50">
+    <section id="contact" className="section-padding bg-secondary-50 dark:bg-secondary-900">
       <Container size="md">
         <SectionTitle
           title="Cotiza tu Proyecto"
@@ -104,7 +104,7 @@ const ContactSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+          className="bg-white dark:bg-secondary-800 rounded-2xl shadow-xl p-8 md:p-12"
         >
           {submitted ? (
             <motion.div
@@ -112,13 +112,13 @@ const ContactSection: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12"
             >
-              <div className="mb-4 inline-flex p-4 bg-green-100 rounded-full">
-                <CheckCircle size={48} className="text-green-600" />
+              <div className="mb-4 inline-flex p-4 bg-green-100 dark:bg-green-900/30 rounded-full">
+                <CheckCircle size={48} className="text-green-600 dark:text-green-400" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary-900 mb-2">
+              <h3 className="text-2xl font-bold text-secondary-900 dark:text-white mb-2">
                 ¡Mensaje Enviado!
               </h3>
-              <p className="text-secondary-600">
+              <p className="text-secondary-600 dark:text-secondary-400">
                 Gracias por contactarnos. Te responderemos pronto.
               </p>
             </motion.div>
@@ -189,7 +189,7 @@ const ContactSection: React.FC = () => {
                 <Send size={20} />
               </Button>
 
-              <p className="text-sm text-secondary-600 text-center">
+              <p className="text-sm text-secondary-600 dark:text-secondary-400 text-center">
                 Al enviar este formulario, aceptas que nos comuniquemos contigo
                 para cotizar tu proyecto.
               </p>

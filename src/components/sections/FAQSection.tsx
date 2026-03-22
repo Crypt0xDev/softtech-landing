@@ -57,7 +57,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="section-padding bg-secondary-50">
+    <section className="section-padding bg-secondary-50 dark:bg-secondary-800">
       <Container size="md">
         <SectionTitle
           title="Preguntas Frecuentes"
@@ -72,16 +72,16 @@ const FAQSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white rounded-xl shadow-md overflow-hidden"
+              className="bg-white dark:bg-secondary-900 rounded-xl shadow-md overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-secondary-50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-secondary-50 dark:hover:bg-secondary-800 transition-colors"
               >
-                <span className="font-semibold text-secondary-900 pr-4">
+                <span className="font-semibold text-secondary-900 dark:text-white pr-4">
                   {faq.question}
                 </span>
-                <span className="flex-shrink-0 text-primary-600">
+                <span className="flex-shrink-0 text-primary-600 dark:text-primary-400">
                   {openId === faq.id ? <Minus size={20} /> : <Plus size={20} />}
                 </span>
               </button>
@@ -94,7 +94,7 @@ const FAQSection: React.FC = () => {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 pb-5 text-secondary-700">
+                    <div className="px-6 pb-5 text-secondary-700 dark:text-secondary-300">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -111,12 +111,12 @@ const FAQSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-secondary-600 mb-4">
+          <p className="text-secondary-600 dark:text-secondary-400 mb-4">
             ¿No encuentras la respuesta que buscas?
           </p>
           <a
             href="#contact"
-            className="text-primary-600 font-semibold hover:text-primary-700 transition-colors"
+            className="text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
           >
             Contáctanos directamente →
           </a>

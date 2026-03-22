@@ -21,8 +21,10 @@ export const SOCIAL_LINKS = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: 'Inicio', href: '#home' },
-  { label: 'Servicios', href: '#services' },
-  { label: 'Nosotros', href: '#about' },
-  { label: 'Contacto', href: '#contact' },
+  { label: 'Inicio', href: '#inicio', key: 'home' },
+  { label: 'Servicios', href: '#services', key: 'services' },
+  { label: 'Nosotros', href: '#about', key: 'about' },
+  { label: 'Testimonios', href: '#testimonials', key: 'testimonials' },
+  { label: 'FAQ', href: '#faq', key: 'faq' },
+  { label: 'Contacto', href: '#contact', key: 'contact' },
 ] as const;
