@@ -62,7 +62,6 @@ const ContactSection: React.FC = () => {
         try {
           // Simulate API call - Aquí puedes integrar EmailJS, FormSubmit, etc.
           await new Promise((resolve) => setTimeout(resolve, 1500));
-          console.log('Form submitted:', values);
 
           // Track form submission in analytics
           trackFormSubmission('Contact Form');
