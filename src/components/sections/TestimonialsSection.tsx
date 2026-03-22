@@ -23,7 +23,7 @@ const TestimonialsSection: React.FC = () => {
       company: 'Distribuidora Lima SAC',
       role: 'Gerente General',
       content:
-        'SoftTech transformó completamente nuestro negocio con una tienda online profesional. Las ventas aumentaron un 300% en los primeros 6 meses.',
+        'La empresa transformó completamente nuestro negocio con una tienda online profesional. Las ventas aumentaron un 300% en los primeros 6 meses.',
       rating: 5,
     },
     {

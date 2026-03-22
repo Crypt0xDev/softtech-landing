@@ -6,6 +6,7 @@ interface UseFormOptions<T> {
   validate?: (values: T) => Partial<Record<keyof T, string>>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useForm = <T extends Record<string, any>>({
   initialValues,
   onSubmit,

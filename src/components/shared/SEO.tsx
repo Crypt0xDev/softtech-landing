@@ -10,13 +10,13 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({
   title = import.meta.env.VITE_SITE_TITLE ||
-    'SoftTech Perú - Desarrollo Web Profesional en Lima',
+    'Tu Empresa - Desarrollo Web Profesional',
   description = import.meta.env.VITE_SITE_DESCRIPTION ||
-    'Empresa peruana líder en desarrollo web, e-commerce, landing pages y soluciones tecnológicas. Servicio técnico 24/7 en Lima, Callao, Arequipa y todo Perú.',
+    'Empresa líder en desarrollo web, e-commerce y soluciones tecnológicas. Servicio profesional en todo Perú.',
   keywords = import.meta.env.VITE_SITE_KEYWORDS ||
-    'desarrollo web perú, diseño web lima, tiendas online, e-commerce perú, páginas web, landing pages, softtech, soporte técnico',
+    'desarrollo web, diseño web, tiendas online, e-commerce, landing pages',
   ogImage = '/og-image.jpg',
-  ogUrl = import.meta.env.VITE_SITE_URL || 'https://softtechperu.com',
+  ogUrl = import.meta.env.VITE_SITE_URL || 'https://tuempresa.com',
 }) => {
   useEffect(() => {
     // Set document title
@@ -37,7 +37,10 @@ const SEO: React.FC<SEOProps> = ({
       { name: 'twitter:image', content: ogImage },
       { name: 'robots', content: 'index, follow' },
       { name: 'language', content: 'Spanish' },
-      { name: 'author', content: 'SoftTech Perú' },
+      {
+        name: 'author',
+        content: import.meta.env.VITE_COMPANY_NAME || 'Tu Empresa',
+      },
     ];
 
     metaTags.forEach(({ name, property, content }) => {

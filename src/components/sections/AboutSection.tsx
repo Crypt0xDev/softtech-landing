@@ -39,7 +39,7 @@ const AboutSection: React.FC = () => {
     <section id="about" className="section-padding bg-white">
       <Container>
         <SectionTitle
-          title="Sobre SoftTech Perú"
+          title={`Sobre ${import.meta.env.VITE_COMPANY_NAME || 'Nuestra Empresa'}`}
           subtitle="Tu socio tecnológico de confianza"
         />
 
@@ -54,7 +54,7 @@ const AboutSection: React.FC = () => {
             <p className="text-lg text-secondary-700 mb-6">
               En{' '}
               <span className="font-semibold text-primary-600">
-                SoftTech Perú
+                {import.meta.env.VITE_COMPANY_NAME || 'Nuestra Empresa'}
               </span>
               , somos una empresa líder en soluciones digitales, especializada
               en desarrollo de software empresarial, tiendas online, y seguridad

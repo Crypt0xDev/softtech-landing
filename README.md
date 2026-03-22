@@ -1,209 +1,349 @@
-# SoftTech Perú - Plataforma Web Corporativa
+<div align="center">
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF.svg)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
+# 🚀 Landing Page Corporativa - Template Profesional
 
-Plataforma web corporativa moderna y escalable para SoftTech Perú, empresa líder en desarrollo de soluciones tecnológicas.
+### **Template** de plataforma web moderna para impulsar negocios en la era digital
 
-## 🎯 Características
+> ⚠️ **NOTA**: Este es un proyecto público con datos de **EJEMPLO**. Reemplaza toda la información con tus datos reales.
 
-- ⚡ **Alto Rendimiento**: Construido con Vite para tiempos de carga óptimos
-- 🎨 **Diseño Responsive**: Experiencia perfecta en todos los dispositivos
-- 🔒 **Type-Safe**: TypeScript estricto para código robusto
-- ♿ **Accesible**: Cumple con estándares WCAG 2.1
-- 📊 **Analytics Ready**: Integración preparada con Google Analytics
-- 🎭 **Animaciones Fluidas**: Powered by Framer Motion
-- 📱 **PWA Ready**: Preparado para Progressive Web App
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19.2-61dafb.svg?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
 
-## 🚀 Stack Tecnológico
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Crypt0xDev/softtech-landing)
 
-| Tecnología    | Versión | Propósito    |
-| ------------- | ------- | ------------ |
-| React         | 19.2.4  | UI Framework |
-| TypeScript    | 5.2.2   | Type Safety  |
-| Vite          | 8.0.1   | Build Tool   |
-| Tailwind CSS  | 3.4.19  | Styling      |
-| Framer Motion | 12.38.0 | Animations   |
-| Lucide React  | 0.577.0 | Icons        |
+</div>
 
-## 📦 Instalación
+---
+
+## ✨ Características Destacadas
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎨 Diseño & UX
+
+- ⚡ **Alto Rendimiento** con Vite
+- 📱 **100% Responsive** - Mobile First
+- 🎭 **Animaciones Fluidas** con Framer Motion
+- ♿ **Accesibilidad WCAG 2.1**
+
+</td>
+<td width="50%">
+
+### 🔧 Tecnología
+
+- 🔒 **TypeScript Strict Mode**
+- 📊 **Analytics Ready** (Google Analytics)
+- 🌐 **SEO Optimizado**
+- 💾 **PWA Ready**
+
+</td>
+</tr>
+</table>
+
+## �️ Stack Tecnológico
+
+<div align="center">
+
+|    🎯 Tecnología     | 📦 Versión | 💡 Propósito |
+| :------------------: | :--------: | :----------: |
+|     ⚛️ **React**     |  `19.2.4`  | UI Framework |
+|  📘 **TypeScript**   |  `5.2.2`   | Type Safety  |
+|     ⚡ **Vite**      |  `8.0.1`   |  Build Tool  |
+| 🎨 **Tailwind CSS**  |  `3.4.19`  |   Styling    |
+| 🎭 **Framer Motion** | `12.38.0`  |  Animations  |
+| 🎯 **Lucide React**  | `0.577.0`  | Icon System  |
+
+</div>
+
+## 📦 Inicio Rápido
 
 ```bash
-# Clonar repositorio
-git clone https://github.com/tu-usuario/softech-peru-landing.git
+# 1️⃣ Clonar repositorio
+git clone https://github.com/Crypt0xDev/softtech-landing.git
+cd softtech-landing
 
-# Instalar dependencias
+# 2️⃣ Instalar dependencias
 npm install
 
-# Copiar variables de entorno
+# 3️⃣ Copiar variables de entorno (opcional)
 cp .env.example .env
 
-# Iniciar servidor de desarrollo
+# 4️⃣ Iniciar servidor de desarrollo
 npm run dev
 ```
 
-## 🛠️ Scripts Disponibles
+> 🎉 Abre [http://localhost:5174](http://localhost:5174) en tu navegador
 
-```bash
-npm run dev      # Servidor de desarrollo (localhost:5174)
-npm run build    # Build de producción
-npm run preview  # Preview del build
-npm run lint     # Ejecutar ESLint
+## 🎮 Scripts Disponibles
+
+| 📝 Comando        | 🎯 Descripción                                |
+| :---------------- | :-------------------------------------------- |
+| `npm run dev`     | 🚀 Servidor de desarrollo en `localhost:5174` |
+| `npm run build`   | 📦 Build optimizado para producción           |
+| `npm run preview` | 👀 Preview del build de producción            |
+| `npm run lint`    | 🔍 Verificar código con ESLint                |
+
+## � Arquitectura del Proyecto
+
 ```
-
-## 📂 Arquitectura del Proyecto
-
-```
-src/
-├── components/
-│   ├── layout/      # Componentes de estructura (Navbar, Footer)
-│   ├── sections/    # Secciones de página (Hero, Services, etc.)
-│   ├── shared/      # Componentes compartidos (SEO, WhatsApp)
-│   └── ui/          # Biblioteca de componentes UI reutilizables
-├── config/          # Configuraciones centralizadas
-├── constants/       # Constantes de aplicación
-├── hooks/           # Custom React Hooks
-├── pages/           # Páginas de la aplicación
-├── styles/          # Estilos globales
-├── types/           # Definiciones de TypeScript
-└── utils/           # Funciones utilidades
+📁 src/
+├── 🧩 components/
+│   ├── 🏛️ layout/          # Navbar, Footer
+│   ├── 📜 sections/        # Hero, Services, Contact, etc.
+│   ├── 🤝 shared/          # SEO, WhatsAppButton, ScrollToTop
+│   └── 🎨 ui/              # Button, Card, Input, Container
+├── ⚙️ config/              # Configuraciones centralizadas
+├── 📊 constants/          # Constantes de aplicación
+├── 🪝 hooks/              # useForm, useScrollAnimation
+├── 📄 pages/              # HomePage
+├── 🎨 styles/             # Estilos globales CSS
+├── 📝 types/              # Definiciones TypeScript
+└── 🛠️ utils/              # Funciones utilidades
 ```
 
 ## ⚙️ Variables de Entorno
 
-Crea un archivo `.env` basado en `.env.example`:
+> � **IMPORTANTE - SEGURIDAD**
+>
+> - Este repositorio es **PÚBLICO** - NUNCA subas datos reales al repositorio
+> - Los valores en el código son **SOLO EJEMPLOS**
+> - Crea tu archivo `.env` local con tus datos REALES
+> - El archivo `.env` está en `.gitignore` y NO se sube a GitHub
+
+> 💡 **Todas las variables son opcionales** - El proyecto funciona con valores por defecto
+
+Crea un archivo `.env` en la raíz del proyecto:
 
 ```env
-# Empresa
-VITE_COMPANY_NAME=SoftTech Perú
-VITE_COMPANY_EMAIL=contacto@softtechperu.com
-VITE_COMPANY_PHONE=+51 912 920 569
+# 🏢 Información de la Empresa (REEMPLAZA CON TUS DATOS REALES)
+VITE_COMPANY_NAME="Tu Empresa"
+VITE_COMPANY_EMAIL="contacto@tuempresa.com"
+VITE_COMPANY_PHONE="+51 999 999 999"
+VITE_COMPANY_ADDRESS="Av. Principal 123, Lima"
 
-# WhatsApp
-VITE_WHATSAPP_PHONE=51912920569
+# 📱 WhatsApp (SIN el + al inicio)
+VITE_WHATSAPP_PHONE="51999999999"
+VITE_WHATSAPP_MESSAGE="Hola, me interesa cotizar un proyecto"
 
-# Analytics
-VITE_GA_TRACKING_ID=G-XXXXXXXXXX
+# 📊 Analytics
+VITE_GA_TRACKING_ID="G-XXXXXXXXXX"
 
-# SEO
-VITE_SITE_URL=https://softtechperu.com
-VITE_SITE_TITLE=SoftTech Perú - Desarrollo Web Profesional
+# 🌐 SEO
+VITE_SITE_URL="https://tuempresa.com"
+VITE_SITE_TITLE="Tu Empresa - Desarrollo Web Profesional"
+VITE_SITE_DESCRIPTION="Empresa líder en desarrollo web y software"
 ```
+
+<details>
+<summary>🔑 Variables Adicionales (Click para expandir)</summary>
+
+```env
+# 📧 Servicios de Email
+VITE_EMAILJS_SERVICE_ID=""
+VITE_EMAILJS_TEMPLATE_ID=""
+VITE_EMAILJS_PUBLIC_KEY=""
+
+# 🔗 Redes Sociales
+VITE_SOCIAL_FACEBOOK="https://facebook.com/tuempresa"
+VITE_SOCIAL_LINKEDIN="https://linkedin.com/company/tuempresa"
+VITE_SOCIAL_TWITTER="https://twitter.com/tuempresa"
+VITE_SOCIAL_INSTAGRAM="https://instagram.com/tuempresa"
+
+# 🎯 API (Si aplica)
+VITE_API_URL=""
+VITE_API_KEY=""
+```
+
+</details>
 
 ## 🎨 Personalización
 
-### Colores de Marca
+<details>
+<summary><b>🌨️ Cambiar Colores de Marca</b></summary>
+
+<br>
 
 Edita `tailwind.config.js`:
 
 ```javascript
-colors: {
-  primary: {
-    50: '#eff6ff',
-    // ... tu paleta
-  }
-}
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          // ... tu paleta personalizada
+          600: '#2563eb',
+        },
+      },
+    },
+  },
+};
 ```
 
-### Componentes Principales
+</details>
 
-- **Navbar**: Navegación sticky con scroll detection
-- **Hero**: Hero section con animaciones y CTAs
-- **Services**: Grid de servicios con hover effects
-- **Testimonials**: Sección de testimonios con ratings
-- **FAQ**: Acordeón interactivo
-- **Contact**: Formulario con validación y toast notifications
+<details>
+<summary><b>🧩 Componentes Principales</b></summary>
 
-## 📱 Características Implementadas
+<br>
 
-### UI/UX
+| 🎯 Componente    | 📝 Descripción                             |
+| :--------------- | :----------------------------------------- |
+| **Navbar**       | Navegación sticky con detección de scroll  |
+| **Hero**         | Sección hero con animaciones y CTAs        |
+| **Services**     | Grid de servicios con efectos hover        |
+| **Testimonials** | Reseñas de clientes con ratings            |
+| **FAQ**          | Acordeón interactivo colapsable            |
+| **Contact**      | Formulario con validación y notificaciones |
+| **Footer**       | Pie de página con enlaces y redes sociales |
 
-- ✅ Diseño responsive mobile-first
-- ✅ Animaciones de scroll reveal
-- ✅ Navegación suave entre secciones
+</details>
+
+## ✅ Características Implementadas
+
+<table>
+<tr>
+<td width="33%">
+
+### 🎨 **UI/UX**
+
+- ✅ Responsive mobile-first
+- ✅ Animaciones scroll reveal
+- ✅ Navegación suave
 - ✅ Toast notifications
 - ✅ Loading states
 - ✅ Error handling
 
-### SEO & Performance
+</td>
+<td width="33%">
 
-- ✅ Meta tags optimizados
+### 🚀 **Performance**
+
+- ✅ Meta tags SEO
 - ✅ Open Graph tags
-- ✅ Optimización de imágenes
+- ✅ Imágenes optimizadas
 - ✅ Code splitting
-- ✅ Lazy loading preparado
+- ✅ Lazy loading ready
+- ✅ Bundle optimizado
 
-### Funcionalidades
+</td>
+<td width="33%">
+
+### 🔧 **Funcionalidades**
 
 - ✅ WhatsApp integration
-- ✅ Formulario de contacto con validación
-- ✅ Analytics tracking preparado
-- ✅ Scroll to top button
+- ✅ Formulario validado
+- ✅ Analytics ready
+- ✅ Scroll to top
 - ✅ FAQ interactivo
+- ✅ Responsive 100%
 
-## 🚀 Deploy
+</td>
+</tr>
+</table>
 
-### Vercel (Recomendado)
+## 🚀 Deployment
+
+### 💜 Vercel (Recomendado)
+
+<div align="center">
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Crypt0xDev/softtech-landing)
 
-El proyecto incluye un archivo `vercel.json` configurado con:
-- ✅ Headers de seguridad (CSP, X-Frame-Options, etc.)
-- ✅ Cache optimization para assets
-- ✅ SPA rewrites configuradas
-- ✅ Variables de entorno preparadas
+</div>
 
-**Deploy manual:**
+**✨ Características del `vercel.json` incluido:**
+
+- 🔒 Headers de seguridad (CSP, X-Frame-Options, etc.)
+- ⚡ Optimización de caché para assets estáticos
+- 🔄 Rewrites configurados para SPA
+- 🌐 Variables de entorno preparadas
+
+<details>
+<summary><b>💻 Deploy Manual con Vercel CLI</b></summary>
+
 ```bash
+# Instalar Vercel CLI
 npm install -g vercel
+
+# Deploy
 vercel
 ```
 
-**Deploy automático:**
-Conecta tu repositorio desde [vercel.com/new](https://vercel.com/new) para deploys automáticos en cada push.
+</details>
+
+<details>
+<summary><b>💻 Otras Plataformas de Deploy</b></summary>
+
+<br>
 
 ### Netlify
 
 ```bash
 npm run build
-# Arrastra la carpeta 'dist' a Netlify
+# Arrastra la carpeta 'dist' a Netlify Drop
 ```
 
-### Configuración de Build
+### Configuración Genérica
 
-- **Build Command**: `npm run build`
-- **Output Directory**: `dist`
-- **Node Version**: 18.x o superior
-- **Framework**: Vite (auto-detectado)
+| 🔑 Parámetro         | ⚙️ Valor              |
+| :------------------- | :-------------------- |
+| **Build Command**    | `npm run build`       |
+| **Output Directory** | `dist`                |
+| **Node Version**     | `18.x` o superior     |
+| **Framework**        | Vite (auto-detectado) |
 
-## 📊 Performance
+</details>
 
-- **Lighthouse Score**: >90 en todas las métricas
-- **Bundle Size**: ~350KB (optimizado)
-- **First Contentful Paint**: <1.5s
-- **Time to Interactive**: <3s
+## 📊 Performance Métricas
+
+<div align="center">
+
+| 🎯 Métrica                 | 📈 Score |
+| :------------------------- | :------: |
+| **Lighthouse Score**       |  `>90`   |
+| **Bundle Size**            | `~371KB` |
+| **First Contentful Paint** | `<1.5s`  |
+| **Time to Interactive**    |  `<3s`   |
+| **Responsive**             |  `100%`  |
+
+</div>
 
 ## 🔒 Seguridad
 
-- TypeScript strict mode habilitado
-- Variables de entorno protegidas
-- Validación de formularios server-ready
-- CSP headers preparadas
-
-## 📄 Licencia
-
-© 2026 SoftTech Perú. Todos los derechos reservados.
-
-## 🤝 Contacto
-
-- **Email**: contacto@softtechperu.com
-- **Teléfono**: +51 912 920 569
-- **Website**: https://softtechperu.com
+- ✅ TypeScript strict mode habilitado
+- ✅ Variables de entorno protegidas (.env en .gitignore)
+- ✅ Validación de formularios implementada
+- ✅ CSP headers configurados en Vercel
+- ✅ Sin dependencias con vulnerabilidades conocidas
+- ⚠️ **Datos de ejemplo** - Reemplazar antes de usar en producción
 
 ---
 
-**Desarrollado con 💙 por el equipo de SoftTech Perú**
+<div align="center">
+
+## 💬 Contacto
+
+📧 **Email:** [contacto@tuempresa.com](mailto:contacto@tuempresa.com)  
+📞 **Teléfono:** [+51 999 999 999](tel:+51999999999)  
+🌐 **Website:** [tuempresa.com](https://tuempresa.com)
+
+> ⚠️ Datos de ejemplo - Reemplaza con tu información real
+
+---
+
+### 💙 Template profesional y moderno
+
+© 2026 - Proyecto de código abierto. Personaliza y usa libremente.
+
+> ⚠️ Recuerda: Reemplaza todos los datos de ejemplo con tu información real antes de usar en producción.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Crypt0xDev/softtech-landing)
+
+</div>

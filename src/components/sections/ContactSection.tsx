@@ -56,7 +56,7 @@ const ContactSection: React.FC = () => {
 
         return errors;
       },
-      onSubmit: async (values) => {
+      onSubmit: async () => {
         const toastId = toast.loading('Enviando mensaje...');
 
         try {
@@ -80,7 +80,7 @@ const ContactSection: React.FC = () => {
           setTimeout(() => {
             setSubmitted(false);
           }, 5000);
-        } catch (error) {
+        } catch {
           toast.error(
             'Error al enviar el mensaje. Por favor intenta de nuevo.',
             {

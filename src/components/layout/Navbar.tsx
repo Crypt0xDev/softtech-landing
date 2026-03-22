@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-primary-600"
           >
-            SoftTech <span className="text-secondary-900">Perú</span>
+            {import.meta.env.VITE_COMPANY_NAME || 'Tu Empresa'}
           </motion.div>
 
           {/* Desktop Navigation */}

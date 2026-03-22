@@ -20,7 +20,7 @@ const CTASection: React.FC = () => {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute top-1/4 -right-20 w-96 h-96 bg-primary-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+          className="absolute top-1/4 -right-10 sm:-right-20 w-64 h-64 sm:w-96 sm:h-96 bg-primary-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
         />
         <motion.div
           animate={{
@@ -32,7 +32,7 @@ const CTASection: React.FC = () => {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute -bottom-20 -left-20 w-96 h-96 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+          className="absolute -bottom-10 -left-10 sm:-bottom-20 sm:-left-20 w-64 h-64 sm:w-96 sm:h-96 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
         />
       </div>
 
