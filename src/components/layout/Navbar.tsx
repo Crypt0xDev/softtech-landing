@@ -53,6 +53,24 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Cerrar menú móvil al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMobileMenuOpen && !target.closest('nav')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   const handleNavClick = (href: string) => {
     scrollToSection(href);
     setIsMobileMenuOpen(false);
@@ -75,7 +93,9 @@ const Navbar: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-primary-600"
+            className={`text-2xl font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-primary-600' : 'text-white'
+            }`}
           >
             {import.meta.env.VITE_COMPANY_NAME || 'Tu Empresa'}
           </motion.div>
@@ -114,12 +134,20 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-secondary-700"
+          <motion.button
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isScrolled ? 'text-secondary-700 hover:bg-primary-50' : 'text-white hover:bg-white/10'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            whileTap={{ scale: 0.95 }}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            <motion.div
+              animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </motion.div>
+          </motion.button>
         </div>
 
         {/* Mobile Menu */}
@@ -130,23 +158,33 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white shadow-lg rounded-b-2xl mt-4"
             >
-              <div className="py-4 space-y-4">
-                {NAV_LINKS.map((link) => (
-                  <button
+              <div className="py-6 space-y-2 px-2">
+                {NAV_LINKS.map((link, index) => (
+                  <motion.button
                     key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ delay: index * 0.05 }}
                     onClick={() => handleNavClick(link.href)}
-                    className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                    className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
                       activeSection === link.href
-                        ? 'text-primary-600 bg-primary-50 font-semibold'
+                        ? 'text-primary-600 bg-primary-50 font-semibold shadow-sm'
                         : 'text-secondary-700 hover:text-primary-600 hover:bg-primary-50'
                     }`}
                   >
                     {link.label}
-                  </button>
+                  </motion.button>
                 ))}
-                <div className="px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ delay: NAV_LINKS.length * 0.05 }}
+                  className="px-2 pt-4"
+                >
                   <Button
                     variant="primary"
                     size="md"
@@ -156,7 +194,7 @@ const Navbar: React.FC = () => {
                     Cotizar Proyecto
                     <ChevronRight size={20} />
                   </Button>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           )}
