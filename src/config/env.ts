@@ -16,10 +16,10 @@ export const env = {
     'Hola, me interesa cotizar un proyecto de desarrollo web',
 
   // Redes Sociales
-  socialFacebook: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK ?? 'https://facebook.com/softtechperu',
-  socialLinkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN ?? 'https://linkedin.com/company/softtechperu',
-  socialTwitter: process.env.NEXT_PUBLIC_SOCIAL_TWITTER ?? 'https://twitter.com/softtechperu',
-  socialInstagram: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM ?? 'https://instagram.com/softtechperu',
+  socialFacebook: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK ?? 'https://facebook.com/softtech',
+  socialLinkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN ?? 'https://linkedin.com/company/softtech',
+  socialTwitter: process.env.NEXT_PUBLIC_SOCIAL_TWITTER ?? 'https://twitter.com/softtech',
+  socialInstagram: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM ?? 'https://instagram.com/softtech',
 
   // Analytics
   gaTrackingId: process.env.NEXT_PUBLIC_GA_TRACKING_ID ?? '',

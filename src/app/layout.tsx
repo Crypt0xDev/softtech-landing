@@ -81,8 +81,8 @@ export const metadata: Metadata = {
   // ── Twitter / X Card ─────────────────────────────────────────────────────
   twitter: {
     card: 'summary_large_image',
-    site: '@softtechperu',
-    creator: '@softtechperu',
+    site: '@softtech',
+    creator: '@softtech',
     title: TITLE,
     description: DESCRIPTION,
     images: [
@@ -150,10 +150,10 @@ export default function RootLayout({
       availableLanguage: ['Spanish', 'English'],
     },
     sameAs: [
-      'https://facebook.com/softtechperu',
-      'https://linkedin.com/company/softtechperu',
-      'https://twitter.com/softtechperu',
-      'https://instagram.com/softtechperu',
+      'https://facebook.com/softtech',
+      'https://linkedin.com/company/softtech',
+      'https://twitter.com/softtech',
+      'https://instagram.com/softtech',
     ],
     offers: {
       '@type': 'Offer',
@@ -165,12 +165,18 @@ export default function RootLayout({
   return (
     <html lang="es-PE" suppressHydrationWarning>
       <head>
+        {/* Anti-FOUC: aplica dark class ANTES del primer paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased transition-colors duration-300`}>
         <ThemeProvider>
           <LanguageProvider>
             {children}

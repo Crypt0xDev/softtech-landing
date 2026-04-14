@@ -8,8 +8,19 @@
     overflow-x: hidden;
   }
 
+  /* Transición global de tema — afecta fondo, texto y bordes en TODO el árbol */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: ease;
+    transition-duration: 200ms;
+  }
+
+  /* Framer Motion: no sobreescribir background-color (necesario para dark mode en Cards) */
+
   body {
-    @apply font-sans antialiased bg-white text-secondary-900;
+    @apply font-sans antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-secondary-100;
     overflow-x: hidden;
     width: 100%;
   }

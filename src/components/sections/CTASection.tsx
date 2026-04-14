@@ -9,7 +9,7 @@ import { scrollToSection } from '@/utils/scroll';
 
 const CTASection: React.FC = () => {
   return (
-    <section className="section-padding bg-secondary-900 text-white relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-secondary-800 to-secondary-900 dark:from-secondary-900 dark:to-black text-white relative overflow-hidden">
       {/* Animated background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

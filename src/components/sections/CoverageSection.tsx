@@ -8,7 +8,7 @@ import { COMPANY_INFO } from '@/constants';
 
 const CoverageSection: React.FC = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden relative">
+    <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-800 dark:to-primary-950 text-white overflow-hidden relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div

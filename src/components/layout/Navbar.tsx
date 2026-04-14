@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.4, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? 'bg-white/98 backdrop-blur-md shadow-lg py-3'
+          ? 'bg-white/98 dark:bg-secondary-900/95 backdrop-blur-md shadow-lg py-3'
           : 'bg-gradient-to-b from-black/50 to-transparent py-6'
       }`}
     >
