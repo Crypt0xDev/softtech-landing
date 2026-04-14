@@ -11,7 +11,6 @@ import { useTheme, useLanguage } from '@/hooks';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('inicio');
@@ -25,14 +24,6 @@ const Navbar: React.FC = () => {
 
       // Cambiar estilo cuando scroll > 20
       setIsScrolled(currentScrollY > 20);
-
-      // Ocultar navbar al hacer scroll hacia abajo, mostrar al hacer scroll hacia arriba
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsHidden(true);
-        setIsMobileMenuOpen(false);
-      } else {
-        setIsHidden(false);
-      }
 
       setLastScrollY(currentScrollY);
 
@@ -94,9 +85,9 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      initial={{ y: 0 }}
-      animate={{ y: isHidden ? -100 : 0 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
           ? 'bg-white/98 backdrop-blur-md shadow-lg py-3'
